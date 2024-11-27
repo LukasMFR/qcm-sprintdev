@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f9;
@@ -8,25 +8,75 @@ body {
 
 h1 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 form {
-    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 700px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 button {
     background-color: #007bff;
     color: #fff;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     cursor: pointer;
     font-size: 16px;
+    border-radius: 4px;
+    display: block;
+    margin: 20px auto;
+    width: fit-content;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-div {
+div.question-block {
     margin-bottom: 20px;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+div.question-block:last-child {
+    border-bottom: none;
+}
+
+div.question-block p {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+label input[type="radio"] {
+    margin-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+ul li strong {
+    font-weight: bold;
 }

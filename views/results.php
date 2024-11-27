@@ -44,5 +44,9 @@ foreach ($_POST as $question_id => $answer_id) {
             }
         endforeach; ?>
     </ul>
+
+    <form action="quiz.php" method="post">
+        <button type="submit">Refaire un QCM</button>
+    </form>
 </body>
 </html>
