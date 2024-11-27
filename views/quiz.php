@@ -1,9 +1,21 @@
 <?php
 include '../includes/db.php';
 
-// Récupérer 10 questions aléatoires
-$stmt = $pdo->query("SELECT * FROM questions ORDER BY RAND() LIMIT 10");
+// Récupérer le niveau sélectionné
+$niveau = isset($_GET['niveau']) ? $_GET['niveau'] : 'tous';
+
+// Préparer la requête SQL en fonction du niveau
+if ($niveau === '0' || $niveau === '1') {
+    $stmt = $pdo->prepare("SELECT * FROM questions WHERE niveau = ? ORDER BY RAND() LIMIT 10");
+    $stmt->execute([$niveau]);
+} else {
+    $stmt = $pdo->query("SELECT * FROM questions ORDER BY RAND() LIMIT 10");
+}
+
 $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Définir le texte du niveau
+$niveauTexte = $niveau === 'tous' ? 'Tous les niveaux' : "Niveau $niveau";
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +26,7 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Répondez aux questions</h1>
+    <h1>QCM - <?php echo htmlspecialchars($niveauTexte); ?></h1>
     <form action="results.php" method="post" onsubmit="return validateForm()">
         <?php 
         $numero = 1; // Initialisation du numéro de question

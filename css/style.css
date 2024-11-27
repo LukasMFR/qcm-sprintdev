@@ -87,6 +87,39 @@ ul li strong {
     font-weight: bold;
 }
 
+.niveau-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.niveau-form label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.niveau-form select {
+    padding: 8px 10px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+}
+
+.niveau-form button {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.niveau-form button:hover {
+    background-color: #0056b3;
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     body {
