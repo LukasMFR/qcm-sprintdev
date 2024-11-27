@@ -16,9 +16,11 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <h1>Répondez aux questions</h1>
     <form action="results.php" method="post" onsubmit="return validateForm()">
-        <?php foreach ($questions as $question): ?>
+        <?php 
+        $numero = 1; // Initialisation du numéro de question
+        foreach ($questions as $question): ?>
             <div class="question-block">
-                <p><strong><?php echo htmlspecialchars($question['libelleQ']); ?></strong></p>
+                <p><strong>Question <?php echo $numero; ?> : <?php echo htmlspecialchars($question['libelleQ']); ?></strong></p>
                 <?php
                 // Récupérer les réponses pour la question actuelle
                 $stmt = $pdo->prepare("SELECT * FROM reponses WHERE idq = ?");
@@ -31,7 +33,9 @@ $questions = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </label><br>
                 <?php endforeach; ?>
             </div>
-        <?php endforeach; ?>
+        <?php 
+        $numero++; // Incrémentation du numéro de question
+        endforeach; ?>
         <button type="submit">Valider</button>
     </form>
 
