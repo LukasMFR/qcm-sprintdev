@@ -39,8 +39,11 @@ foreach ($_POST as $question_id => $answer_id) {
                 $stmt->execute([$answer_id]);
                 $response = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                echo "<li><strong>$questionText</strong><br>";
-                echo "Votre réponse : " . htmlspecialchars($response['libeller']) . " (" . ($response['verite'] ? "Correct" : "Incorrect") . ")</li>";
+                // Classe CSS pour le style (vert ou rouge)
+                $resultClass = $response['verite'] ? 'correct' : 'incorrect';
+
+                echo "<li class='$resultClass'><strong>$questionText</strong><br>";
+                echo "Votre réponse : " . htmlspecialchars($response['libeller']) . "</li>";
             }
         endforeach; ?>
     </ul>
