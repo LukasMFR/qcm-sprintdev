@@ -24,7 +24,9 @@ foreach ($_POST as $question_id => $answer_id) {
 </head>
 <body>
     <h1>Résultats</h1>
-    <p>Votre score est de : <?php echo $score; ?>/20</p>
+    <p class="score <?php 
+        echo ($score >= 10 ? 'correct' : ($score >= 5 ? 'medium' : 'incorrect')); 
+    ?>">Votre score est de : <?php echo $score; ?>/20</p>
     <p>Correction :</p>
     <ul>
         <?php foreach ($_POST as $question_id => $answer_id): 
@@ -39,11 +41,11 @@ foreach ($_POST as $question_id => $answer_id) {
                 $stmt->execute([$answer_id]);
                 $response = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                // Classe CSS pour le style (vert ou rouge)
+                // Classe CSS pour correct ou incorrect
                 $resultClass = $response['verite'] ? 'correct' : 'incorrect';
 
                 echo "<li class='$resultClass'><strong>$questionText</strong><br>";
-                echo "Votre réponse : " . htmlspecialchars($response['libeller']) . "</li>";
+                echo "Votre réponse : " . htmlspecialchars($response['libeller']) . " (" . ($response['verite'] ? "Correct" : "Incorrect") . ")</li>";
             }
         endforeach; ?>
     </ul>
