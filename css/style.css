@@ -103,25 +103,31 @@ nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 15px; /* Espacement entre les éléments */
+    gap: 15px; /* Espacement entre les boutons */
 }
 
 nav ul li {
     margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
+    display: block;
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
     padding: 10px 20px;
+    text-align: center;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
+    background-color: #f4f4f9; /* Fond de base */
+    border: 1px solid transparent;
 }
 
 nav ul li a:hover {
     background-color: #007bff;
     color: white;
+    border-color: #007bff; /* Ajoute une bordure bleue */
 }
 
 .niveau-form {
@@ -446,6 +452,16 @@ nav ul li a:hover {
 
 /* Assurer un bon affichage sur petits écrans */
 @media (max-width: 600px) {
+    nav ul {
+        flex-direction: column; /* Les boutons passent en colonne */
+        gap: 10px; /* Espacement entre chaque bouton */
+    }
+
+    nav ul li a {
+        padding: 8px; /* Boutons plus fins */
+        font-size: 14px; /* Texte légèrement réduit */
+    }
+
     .form-admin {
         flex-direction: column; /* Affiche les éléments l'un en dessous de l'autre */
         gap: 15px; /* Ajoute plus d'espace entre la barre et le bouton */
@@ -496,13 +512,20 @@ nav ul li a:hover {
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     }
 
+    nav {
+        background-color: #1e1e1e;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
     nav ul li a {
+        background-color: #2b2b2b;
         color: #4a90e2;
     }
     
     nav ul li a:hover {
         background-color: #4a90e2;
         color: white;
+        border-color: #4a90e2;
     }
     
     .niveau-form select {
