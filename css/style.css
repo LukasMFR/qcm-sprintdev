@@ -276,6 +276,19 @@ ul li strong {
     color: #0056b3;
 }
 
+.form-login .error-message {
+    color: #721c24; /* Rouge foncé */
+    background-color: #f8d7da; /* Rouge clair */
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px; /* Espace sous le message */
+    text-align: center;
+    font-size: 14px;
+    width: 100%; /* S'aligne avec les champs */
+    box-sizing: border-box;
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     body {
@@ -396,6 +409,13 @@ ul li strong {
     .error-message {
         background-color: #57222a;
         color: #f2b8bb;
+        border: 1px solid #a94452;
+    }
+
+    /* Message d'erreur intégré dans le formulaire */
+    .form-login .error-message {
+        background-color: #57222a; /* Rouge foncé */
+        color: #f2b8bb; /* Rouge pâle */
         border: 1px solid #a94452;
     }
 }

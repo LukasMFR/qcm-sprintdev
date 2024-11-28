@@ -2,6 +2,8 @@
 session_start();
 include '../includes/db.php';
 
+$error_message = null; // Initialiser la variable d'erreur
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username']);
     $password = $_POST['password'];
@@ -17,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: home.php');
         exit();
     } else {
-        echo "Nom d'utilisateur ou mot de passe incorrect.";
+        $error_message = "Nom d'utilisateur ou mot de passe incorrect.";
     }
 }
 ?>
@@ -31,10 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <h1>Connexion</h1>
-    <?php if ($error_message): ?>
-        <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
-    <?php endif; ?>
     <form action="login.php" method="post" class="form-login">
+        <?php if ($error_message): ?>
+            <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+        <?php endif; ?>
         <input type="text" name="username" placeholder="Nom d'utilisateur" required>
         <input type="password" name="password" placeholder="Mot de passe" required>
         <button type="submit">Se connecter</button>
