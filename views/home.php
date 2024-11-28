@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="register.php">Inscription</a></li>
+            <li><a href="login.php">Connexion</a></li>
+            <li><a href="average.php">Ma moyenne</a></li>
+            <li><a href="admin.php">Espace admin</a></li>
+        </ul>
+    </nav>
     <h1>Bienvenue au QCM</h1>
     <form action="quiz.php" method="get" class="niveau-form">
         <label for="niveau">Choisissez un niveau :</label>

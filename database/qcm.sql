@@ -27,8 +27,9 @@ SET time_zone = "+00:00";
 -- Structure de la table `questions`
 --
 
-create database qcm;
-use qcm;
+DROP DATABASE IF EXISTS qcm;
+CREATE DATABASE qcm;
+USE qcm;
 
 DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
@@ -264,6 +265,37 @@ INSERT INTO `reponses` (`idr`, `idq`, `libeller`, `verite`) VALUES
 (158, 40, 'La couleur bleue', 0),
 (159, 40, 'Les pommes de terres', 0),
 (160, 40, '42', 1);
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `utilisateurs`
+--
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    is_admin BOOLEAN DEFAULT 0
+);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `resultats`
+--
+
+-- Table des résultats
+CREATE TABLE results (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    score INT NOT NULL,
+    total_questions INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
