@@ -141,16 +141,22 @@ nav ul li a:hover {
     font-size: 16px;
 }
 
-/* Formulaire des niveaux */
+/* Menu déroulant personnalisé */
 .niveau-form select {
-    padding: 8px;
+    appearance: none; /* Supprime le style natif */
+    padding: 10px 12px;
+    padding-right: 40px; /* Ajoute de l'espace à droite pour la flèche */
     font-size: 16px;
-    border-radius: 4px;
+    border-radius: 6px;
     border: 1px solid #ddd;
     background-color: #ffffff;
     color: #333;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
     cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23333'%3E%3Cpath d='M5.8 7.5l4.2 4.2 4.2-4.2a1 1 0 111.4 1.4l-5 5a1 1 0 01-1.4 0l-5-5a1 1 0 111.4-1.4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center; /* Positionne la flèche à droite */
+    background-size: 12px;
 }
 
 .niveau-form select:hover {
@@ -521,7 +527,7 @@ nav ul li a:hover {
         background-color: #2b2b2b;
         color: #4a90e2;
     }
-    
+
     nav ul li a:hover {
         background-color: #4a90e2;
         color: white;
@@ -529,17 +535,18 @@ nav ul li a:hover {
     }
     
     .niveau-form select {
-        background-color: #3b3b3b;
+        background-color: #2b2b2b;
         color: #e0e0e0;
         border: 1px solid #555;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%23e0e0e0'%3E%3Cpath d='M5.8 7.5l4.2 4.2 4.2-4.2a1 1 0 111.4 1.4l-5 5a1 1 0 01-1.4 0l-5-5a1 1 0 111.4-1.4z'/%3E%3C/svg%3E");
     }
-    
-    .niveau-form button {
-        background-color: #4a90e2;
+
+    .niveau-form select:hover {
+        border-color: #4a90e2;
     }
-    
-    .niveau-form button:hover {
-        background-color: #3a6db5;
+
+    .niveau-form select:focus {
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
     }
 
     .niveau-form select {
