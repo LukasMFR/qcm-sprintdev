@@ -456,6 +456,58 @@ nav ul li a:hover {
     background-color: #f1f1f1;
 }
 
+/* Conteneur principal pour la page des résultats */
+.container-results {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Titre de la page */
+.title-results {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Texte pour la moyenne */
+.text-average {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.score-average {
+    font-weight: bold;
+    color: #007bff; /* Bleu pour attirer l'attention */
+}
+
+/* Tableau des résultats */
+.table-results {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.table-results th,
+.table-results td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.table-results th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.table-results tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-results tr:hover {
+    background-color: #f1f1f1;
+}
+
 /* Assurer un bon affichage sur petits écrans */
 @media (max-width: 600px) {
     nav ul {
@@ -714,5 +766,26 @@ nav ul li a:hover {
 
     .table-admin tr:hover {
         background-color: #3a3a3a;
+    }
+
+    .table-results {
+        color: #e0e0e0;
+        border-color: #555;
+    }
+
+    .table-results th {
+        background-color: #1a73e8;
+    }
+
+    .table-results tr:nth-child(even) {
+        background-color: #2b2b2b;
+    }
+
+    .table-results tr:hover {
+        background-color: #3b3b3b;
+    }
+
+    .score-average {
+        color: #4a90e2;
     }
 }
