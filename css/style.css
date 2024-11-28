@@ -348,9 +348,8 @@ ul li strong {
 }
 
 .search-admin {
-    width: 60%; /* Réduit la largeur du champ */
-    max-width: 400px; /* Largeur maximale */
-    padding: 10px;
+    width: 70%; /* Retour à l'ancienne largeur */
+    padding: 8px; /* Réduction de la hauteur */
     font-size: 16px;
     border: 1px solid #ddd;
     border-radius: 4px; /* Coins arrondis uniformes */
@@ -359,7 +358,7 @@ ul li strong {
 
 .btn-search {
     margin-left: 10px; /* Espacement entre le champ et le bouton */
-    padding: 10px 20px;
+    padding: 8px 20px; /* Réduction de la hauteur pour correspondre à la barre de recherche */
     background-color: #007bff;
     color: white;
     border: none;
