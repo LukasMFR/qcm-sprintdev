@@ -19,28 +19,35 @@ $results = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>Espace admin</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <h1>Résultats des utilisateurs</h1>
-    <form action="admin.php" method="get">
-        <input type="text" name="search" placeholder="Rechercher un utilisateur" value="<?php echo htmlspecialchars($search); ?>">
-        <button type="submit">Rechercher</button>
-    </form>
-    <table>
-        <tr>
-            <th>Utilisateur</th>
-            <th>Score</th>
-            <th>Questions totales</th>
-            <th>Date</th>
-        </tr>
-        <?php foreach ($results as $result): ?>
-        <tr>
-            <td><?php echo htmlspecialchars($result['username']); ?></td>
-            <td><?php echo $result['score']; ?></td>
-            <td><?php echo $result['total_questions']; ?></td>
-            <td><?php echo $result['created_at']; ?></td>
-        </tr>
-        <?php endforeach; ?>
-    </table>
+    <div class="container-admin">
+        <h1 class="title-admin">Espace admin - Résultats des utilisateurs</h1>
+        <form action="admin.php" method="get" class="form-admin">
+            <input type="text" name="search" placeholder="Rechercher un utilisateur" value="<?php echo htmlspecialchars($search); ?>" class="search-admin">
+            <button type="submit" class="btn-search">Rechercher</button>
+        </form>
+        <table class="table-admin">
+            <thead>
+                <tr>
+                    <th>Utilisateur</th>
+                    <th>Score</th>
+                    <th>Questions totales</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($results as $result): ?>
+                <tr>
+                    <td><?php echo htmlspecialchars($result['username']); ?></td>
+                    <td><?php echo $result['score']; ?></td>
+                    <td><?php echo $result['total_questions']; ?></td>
+                    <td><?php echo $result['created_at']; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

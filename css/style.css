@@ -321,6 +321,86 @@ ul li strong {
     color: #007bff; /* Bleu pour la moyenne */
 }
 
+/* Conteneur principal */
+.container-admin {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre */
+.title-admin {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Formulaire de recherche */
+.form-admin {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-admin {
+    width: 60%; /* Réduit la largeur du champ */
+    max-width: 400px; /* Largeur maximale */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px; /* Coins arrondis uniformes */
+    box-sizing: border-box;
+}
+
+.btn-search {
+    margin-left: 10px; /* Espacement entre le champ et le bouton */
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px; /* Coins arrondis uniformes */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-search:hover {
+    background-color: #0056b3;
+}
+
+/* Tableau */
+.table-admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table-admin th,
+.table-admin td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.table-admin th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+}
+
+.table-admin tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.table-admin tr:hover {
+    background-color: #f1f1f1;
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     body {
@@ -477,5 +557,44 @@ ul li strong {
 
     .btn-home:hover {
         background-color: #3a6db5; /* Bleu foncé pour le hover */
+    }
+
+    /* Styles pour la page admin.php */
+    .container-admin {
+        background-color: #2b2b2b;
+        color: #e0e0e0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .title-admin {
+        color: #ffffff;
+    }
+
+    .form-admin .search-admin {
+        background-color: #3b3b3b;
+        color: #e0e0e0;
+        border: 1px solid #555;
+    }
+
+    .form-admin .btn-search {
+        background-color: #4a90e2;
+    }
+
+    .form-admin .btn-search:hover {
+        background-color: #3a6db5;
+    }
+
+    .table-admin th {
+        background-color: #3b3b3b;
+        color: #ffffff;
+    }
+
+    .table-admin td {
+        background-color: #2b2b2b;
+        color: #e0e0e0;
+    }
+
+    .table-admin tr:hover {
+        background-color: #3a3a3a;
     }
 }
