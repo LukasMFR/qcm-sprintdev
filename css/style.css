@@ -480,6 +480,12 @@ nav ul li a:hover {
     color: #007bff; /* Bleu pour attirer l'attention */
 }
 
+/* Styles pour aligner les notes à droite */
+.score-cell {
+    text-align: right; /* Aligne les scores à droite */
+    font-weight: bold;
+}
+
 /* Tableau des résultats */
 .table-results {
     width: 100%;
@@ -787,5 +793,9 @@ nav ul li a:hover {
 
     .score-average {
         color: #4a90e2;
+    }
+
+    .score-cell {
+        color: #4a90e2; /* Ajuste la couleur des scores dans le dark mode */
     }
 }

@@ -19,13 +19,6 @@ $average = $stmt->fetchColumn();
 $stmt = $pdo->prepare("SELECT * FROM results WHERE user_id = ? ORDER BY created_at DESC");
 $stmt->execute([$user_id]);
 $results = $stmt->fetchAll();
-
-// Fonction pour reformater la date
-function formatDate($datetime) {
-    setlocale(LC_TIME, 'fr_FR.UTF-8'); // Pour le format français
-    $timestamp = strtotime($datetime);
-    return strftime('%d %B %Y à %H:%M:%S', $timestamp);
-}
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +51,7 @@ function formatDate($datetime) {
                 <tr>
                     <td class="score-cell"><?php echo $result['score']; ?>/20</td>
                     <td><?php echo $result['total_questions']; ?></td>
-                    <td><?php echo formatDate($result['created_at']); ?></td>
+                    <td><?php echo formatDateFr($result['created_at']); ?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
