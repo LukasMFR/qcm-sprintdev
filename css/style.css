@@ -289,6 +289,38 @@ ul li strong {
     box-sizing: border-box;
 }
 
+/* Container principal pour la page average.php */
+.container-average {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Titre de la page */
+.title-average {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Texte de la moyenne */
+.text-average {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Score de la moyenne (en gras et coloré) */
+.score-average {
+    font-weight: bold;
+    color: #007bff; /* Bleu pour la moyenne */
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     body {
@@ -417,5 +449,33 @@ ul li strong {
         background-color: #57222a; /* Rouge foncé */
         color: #f2b8bb; /* Rouge pâle */
         border: 1px solid #a94452;
+    }
+
+    /* Container principal pour la page average.php */
+    .container-average {
+        background-color: #2b2b2b;
+        color: #e0e0e0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .title-average {
+        color: #ffffff;
+    }
+
+    .text-average {
+        color: #cccccc;
+    }
+
+    .score-average {
+        color: #4a90e2;
+    }
+
+    .btn-home {
+        background-color: #4a90e2; /* Bleu clair adapté au dark mode */
+        color: #ffffff; /* Texte blanc */
+    }
+
+    .btn-home:hover {
+        background-color: #3a6db5; /* Bleu foncé pour le hover */
     }
 }
