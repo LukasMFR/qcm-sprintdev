@@ -343,29 +343,32 @@ ul li strong {
 /* Formulaire de recherche */
 .form-admin {
     display: flex;
-    justify-content: center;
+    align-items: center; /* Aligne verticalement */
+    gap: 10px; /* Espace constant entre les éléments */
     margin-bottom: 20px;
+    flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
 }
 
 .search-admin {
-    width: 70%; /* Retour à l'ancienne largeur */
-    padding: 8px; /* Réduction de la hauteur */
-    font-size: 16px;
+    flex: 1; /* Prend tout l'espace disponible */
+    padding: 6px 10px; /* Réduction du padding pour diminuer la hauteur */
+    font-size: 14px; /* Taille de texte adaptée */
     border: 1px solid #ddd;
-    border-radius: 4px; /* Coins arrondis uniformes */
+    border-radius: 4px;
     box-sizing: border-box;
+    min-width: 0; /* Empêche le débordement */
 }
 
 .btn-search {
-    margin-left: 10px; /* Espacement entre le champ et le bouton */
-    padding: 8px 20px; /* Réduction de la hauteur pour correspondre à la barre de recherche */
+    padding: 6px 15px; /* Taille réduite pour correspondre à la barre */
+    font-size: 14px;
     background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px; /* Coins arrondis uniformes */
-    font-size: 16px;
+    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    flex-shrink: 0; /* Le bouton garde sa taille minimale */
 }
 
 .btn-search:hover {
@@ -398,6 +401,23 @@ ul li strong {
 
 .table-admin tr:hover {
     background-color: #f1f1f1;
+}
+
+/* Assurer un bon affichage sur petits écrans */
+@media (max-width: 768px) {
+    .form-admin {
+        flex-direction: column; /* Affiche les éléments l'un en dessous de l'autre */
+        gap: 15px; /* Ajoute plus d'espace entre la barre et le bouton */
+    }
+
+    .search-admin {
+        width: 100%; /* La barre prend toute la largeur */
+    }
+
+    .btn-search {
+        width: 100%; /* Le bouton prend toute la largeur */
+        text-align: center;
+    }
 }
 
 /* Dark mode styles */
