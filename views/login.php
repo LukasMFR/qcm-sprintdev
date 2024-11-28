@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['is_admin'] = $user['is_admin'];
-        header('Location: quiz.php');
+        header('Location: home.php');
         exit();
     } else {
         echo "Nom d'utilisateur ou mot de passe incorrect.";
@@ -35,5 +35,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="password" name="password" placeholder="Mot de passe" required><br>
         <button type="submit">Se connecter</button>
     </form>
+    <p>Pas encore de compte ? <a href="register.php">Inscrivez-vous ici</a>.</p>
 </body>
 </html>
