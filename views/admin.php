@@ -23,6 +23,9 @@ $results = $stmt->fetchAll();
 </head>
 <body>
     <div class="container-admin">
+        <!-- Bouton retour à l'accueil -->
+        <a href="home.php" class="btn-home">Retour à l'accueil</a>
+
         <h1 class="title-admin">Espace admin - Résultats des utilisateurs</h1>
         <form action="admin.php" method="get" class="form-admin">
             <input type="text" name="search" placeholder="Rechercher un utilisateur" value="<?php echo htmlspecialchars($search); ?>" class="search-admin">
