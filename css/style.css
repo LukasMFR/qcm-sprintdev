@@ -201,6 +201,81 @@ ul li strong {
     border: 1px solid #f5c6cb;
 }
 
+/* Styles spécifiques pour le formulaire de login/connexion */
+.form-login {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-login input[type="text"]:focus,
+.form-login input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.form-login button {
+    display: block;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.form-login button:hover {
+    background-color: #0056b3;
+}
+
+/* Message d'erreur spécifique */
+.error-message {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Lien sous le formulaire */
+.form-login + p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.form-login + p a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.form-login + p a:hover {
+    color: #0056b3;
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     body {
@@ -279,6 +354,48 @@ ul li strong {
     .score.incorrect {
         background-color: #57222a; /* Rouge foncé */
         color: #f2b8bb; /* Rouge pâle */
+        border: 1px solid #a94452;
+    }
+
+    /* Styles spécifiques pour le formulaire de login/connexion */
+    .form-login {
+        background-color: #2b2b2b;
+        color: #e0e0e0;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-login input[type="text"],
+    .form-login input[type="password"] {
+        background-color: #3b3b3b;
+        color: #e0e0e0;
+        border: 1px solid #555;
+    }
+
+    .form-login input[type="text"]:focus,
+    .form-login input[type="password"]:focus {
+        border-color: #4a90e2;
+        box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+    }
+
+    .form-login button {
+        background-color: #4a90e2;
+    }
+
+    .form-login button:hover {
+        background-color: #3a6db5;
+    }
+
+    .form-login + p a {
+        color: #4a90e2;
+    }
+
+    .form-login + p a:hover {
+        color: #3a6db5;
+    }
+
+    .error-message {
+        background-color: #57222a;
+        color: #f2b8bb;
         border: 1px solid #a94452;
     }
 }

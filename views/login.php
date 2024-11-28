@@ -27,12 +27,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Connexion</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <h1>Connexion</h1>
-    <form action="login.php" method="post">
-        <input type="text" name="username" placeholder="Nom d'utilisateur" required><br>
-        <input type="password" name="password" placeholder="Mot de passe" required><br>
+    <?php if ($error_message): ?>
+        <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
+    <?php endif; ?>
+    <form action="login.php" method="post" class="form-login">
+        <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+        <input type="password" name="password" placeholder="Mot de passe" required>
         <button type="submit">Se connecter</button>
     </form>
     <p>Pas encore de compte ? <a href="register.php">Inscrivez-vous ici</a>.</p>
