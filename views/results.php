@@ -1,7 +1,17 @@
 <?php
+session_start();
 include '../includes/db.php';
 
+// Vérifier si l'utilisateur est connecté
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
 $score = 0;
+
+// Calcul du score
 foreach ($_POST as $question_id => $answer_id) {
     if (strpos($question_id, 'question_') === 0) {
         $stmt = $pdo->prepare("SELECT verite FROM reponses WHERE idr = ?");
@@ -13,6 +23,9 @@ foreach ($_POST as $question_id => $answer_id) {
     }
 }
 
+// Enregistrer les résultats dans la base
+$stmt = $pdo->prepare("INSERT INTO results (user_id, score, total_questions) VALUES (?, ?, ?)");
+$stmt->execute([$user_id, $score, 10]);
 ?>
 
 <!DOCTYPE html>
